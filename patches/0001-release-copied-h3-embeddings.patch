@@ -1,0 +1,15 @@
+diff --git a/comfy/ldm/minimax/model.py b/comfy/ldm/minimax/model.py
+index 765f2198..de87397b 100644
+--- a/comfy/ldm/minimax/model.py
++++ b/comfy/ldm/minimax/model.py
+@@ -680,6 +680,10 @@ class MiniMaxH3Model(nn.Module):
+                 h[a:b] = audio_embed[aoff:aoff + n]
+                 aoff += n
+ 
++        # These embeddings have been copied into h; retaining them through all
++        # transformer blocks wastes a full hidden-state buffer on long clips.
++        del video_embed, audio_embed, all_video_rows, all_audio_rows
++
+         t_vals = torch.tensor(unique_t, dtype=torch.float32, device=device)
+         if self.use_adaln_curves:
+             # adaln projections consume interpolated coordinates of the time-embedding curve

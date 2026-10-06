@@ -1,0 +1,13 @@
+diff --git a/comfy_extras/nodes_sparse_attention.py b/comfy_extras/nodes_sparse_attention.py
+index 006d1eb3..177766a9 100644
+--- a/comfy_extras/nodes_sparse_attention.py
++++ b/comfy_extras/nodes_sparse_attention.py
+@@ -18,7 +18,7 @@ from comfy_api.latest import ComfyExtension, io
+ 
+ HEAD_DIM = 128
+ BLOCK_SIZE = 64
+-PRODUCER_CHUNK = 4096
++PRODUCER_CHUNK = 16384
+ VSA_CUBE = (4, 4, 4)
+ VSA_PLAN_CACHE = 4
+ 

@@ -1,0 +1,14 @@
+[project]
+name = "h3-rtx5090"
+description = "MiniMax H3 memory/speed optimizations, VDN-H3 Fast and helper nodes for ComfyUI on a single 32 GB GPU."
+version = "0.1.0"
+license = { file = "LICENSE" }
+dependencies = ["nvidia-cutlass-dsl[cu13]==4.7.0"]
+
+[project.urls]
+Repository = "https://github.com/Noir-Lime/h3-rtx5090"
+
+[tool.comfy]
+PublisherId = ""
+DisplayName = "h3-rtx5090"
+Icon = ""
